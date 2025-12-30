@@ -1,0 +1,27 @@
+{
+  "name": "nailfinder",
+  "version": "1.0.0",
+  "description": "A simple poc for Clarisse",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx serve public",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/VictorMusta/NailFinder.git"
+  },
+  "keywords": [
+    "nail",
+    "referencing"
+  ],
+  "author": "VictorMusta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VictorMusta/NailFinder/issues"
+  },
+  "homepage": "https://github.com/VictorMusta/NailFinder#readme",
+  "devDependencies": {
+    "serve": "^14.2.5"
+  }
+}

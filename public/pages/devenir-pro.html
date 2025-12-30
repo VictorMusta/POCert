@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Devenir prothésiste certifiée – NailFinder</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+</head>
+<body class="page page-pro" data-page="pro">
+  <header class="nf-header">
+    <div class="nf-header__inner">
+      <a href="../index.html" class="nf-logo">NailFinder</a>
+      <nav class="nf-nav">
+        <a href="../index.html" class="nf-nav__link">Accueil</a>
+        <a href="recherche.html" class="nf-nav__link">Rechercher</a>
+        <a href="certification.html" class="nf-nav__link">Certification</a>
+        <a href="devenir-pro.html" class="nf-nav__link nf-nav__link--active">Devenir pro</a>
+      </nav>
+      <button id="theme-toggle" class="btn btn-ghost" type="button">Mode sombre</button>
+    </div>
+  </header>
+
+  <main class="container section">
+    <header class="section__header section__header--with-sub">
+      <h1>Devenir prothésiste certifiée NailFinder</h1>
+      <p class="section__subtitle">Un positionnement premium, une clientèle en confiance, une image maîtrisée.</p>
+    </header>
+
+    <section class="grid grid-2 section">
+      <article>
+        <h2>Une plateforme qui valorise vraiment votre travail</h2>
+        <p>Ce POC illustre l’expérience que nous voulons offrir&nbsp;: des profils clairs, des avis lisibles, une certification exigeante mais transparente.</p>
+        <p>Rien n’est encore en production&nbsp;: il s’agit d’un prototype pour se projeter ensemble.</p>
+      </article>
+      <article class="card card-soft">
+        <h3>Avantages envisagés</h3>
+        <ul class="list-soft">
+          <li>Visibilité ciblée auprès de clientes qui cherchent la qualité.</li>
+          <li>Mise en avant de vos certifications et de votre style.</li>
+          <li>Gestion structurée des avis clients.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2>Manifester votre intérêt (formulaire fictif)</h2>
+      <form id="pro-form" class="form" novalidate>
+        <div class="grid grid-2 grid-gap">
+          <div class="field">
+            <label class="field__label" for="pro-name">Nom / Nom du salon</label>
+            <input class="field__input" id="pro-name" type="text" required />
+          </div>
+          <div class="field">
+            <label class="field__label" for="pro-city">Ville</label>
+            <input class="field__input" id="pro-city" type="text" required />
+          </div>
+        </div>
+
+        <div class="grid grid-2 grid-gap">
+          <div class="field">
+            <label class="field__label" for="pro-email">Email</label>
+            <input class="field__input" id="pro-email" type="email" required />
+          </div>
+          <div class="field">
+            <label class="field__label" for="pro-instagram">Instagram ou site</label>
+            <input class="field__input" id="pro-instagram" type="url" placeholder="https://instagram.com/votrecompte" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="pro-experience">Années d’expérience</label>
+          <select class="field__input" id="pro-experience">
+            <option value="">Sélectionner…</option>
+            <option value="0-1">Moins d’un an</option>
+            <option value="1-3">1–3 ans</option>
+            <option value="3-5">3–5 ans</option>
+            <option value="5+">Plus de 5 ans</option>
+          </select>
+        </div>
+
+        <fieldset class="field-group">
+          <legend class="field__label">Certifications déjà obtenues (fictif)</legend>
+          <div class="tags tags--choices">
+            <label class="tag-choice"><input type="checkbox" value="CAP esthétique" /> CAP esthétique</label>
+            <label class="tag-choice"><input type="checkbox" value="Formation gel" /> Formation gel</label>
+            <label class="tag-choice"><input type="checkbox" value="Nail art avancé" /> Nail art avancé</label>
+          </div>
+        </fieldset>
+
+        <div class="field field--checkbox">
+          <input type="checkbox" id="pro-consent" required />
+          <label for="pro-consent">Je comprends qu’il s’agit d’un prototype et qu’aucune donnée ne sera réellement traitée.</label>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Envoyer ma demande fictive</button>
+        <p id="pro-form-message" class="form-message" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="nf-footer">
+    <div class="container nf-footer__inner">
+      <p>© 2025 NailFinder</p>
+    </div>
+  </footer>
+
+  <script src="../js/devenir-pro.js"></script>
+</body>
+</html>
+
