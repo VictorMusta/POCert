@@ -1,7 +1,7 @@
 {
-  "name": "nailfinder",
+  "name": "pocert",
   "version": "1.0.0",
-  "description": "A simple poc for Clarisse",
+  "description": "POCERT (ProthèseOngulaireCertifiée) - POC front-only",
   "main": "index.js",
   "scripts": {
     "dev": "npx serve public",
@@ -13,7 +13,8 @@
   },
   "keywords": [
     "nail",
-    "referencing"
+    "referencing",
+    "pocert"
   ],
   "author": "VictorMusta",
   "license": "ISC",
