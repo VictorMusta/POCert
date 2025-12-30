@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rechercher une prothésiste – NailFinder</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+</head>
+<body class="page page-search" data-page="search">
+  <header class="nf-header">
+    <div class="nf-header__inner">
+      <a href="../index.html" class="nf-logo">NailFinder</a>
+      <nav class="nf-nav">
+        <a href="../index.html" class="nf-nav__link">Accueil</a>
+        <a href="recherche.html" class="nf-nav__link nf-nav__link--active">Rechercher</a>
+        <a href="certification.html" class="nf-nav__link">Certification</a>
+        <a href="devenir-pro.html" class="nf-nav__link">Devenir pro</a>
+      </nav>
+      <button id="theme-toggle" class="btn btn-ghost" type="button">Mode sombre</button>
+    </div>
+  </header>
+
+  <main class="container section">
+    <header class="section__header section__header--with-sub">
+      <h1>Rechercher une prothésiste ongulaire</h1>
+      <p class="section__subtitle">Filtres simples, résultats clairs, pour trouver la bonne personne en quelques secondes.</p>
+    </header>
+
+    <section class="search-layout">
+      <aside class="search-filters">
+        <form id="search-form" class="search-form" onsubmit="return false;">
+          <div class="field">
+            <label class="field__label" for="search-city">Ville ou code postal</label>
+            <input class="field__input" id="search-city" type="text" placeholder="Paris, Lyon…" />
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="search-rating">Note minimale</label>
+            <select class="field__input" id="search-rating">
+              <option value="0">Aucune préférence</option>
+              <option value="4">4★ et plus</option>
+              <option value="4.5">4.5★ et plus</option>
+            </select>
+          </div>
+
+          <div class="field field--checkbox">
+            <input type="checkbox" id="search-certified" />
+            <label for="search-certified">Certifiées uniquement</label>
+          </div>
+
+          <button class="btn btn-primary btn-block" id="search-button" type="button">Mettre à jour les résultats</button>
+          <button class="btn btn-ghost btn-block" id="search-reset" type="button">Réinitialiser</button>
+        </form>
+      </aside>
+
+      <section class="search-results">
+        <header class="search-results__header">
+          <p id="results-summary">Chargement des résultats…</p>
+        </header>
+        <div id="results-list" class="grid grid-2 search-results__grid"></div>
+        <p id="results-empty" class="results-empty" hidden>Aucune prothésiste ne correspond à ces critères dans ce POC. Essayez d’élargir la recherche.</p>
+      </section>
+    </section>
+  </main>
+
+  <footer class="nf-footer">
+    <div class="container nf-footer__inner">
+      <p>© 2025 NailFinder</p>
+    </div>
+  </footer>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/search.js"></script>
+</body>
+</html>
+

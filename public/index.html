@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NailFinder – Prothésistes ongulaires certifiées</title>
+  <link rel="stylesheet" href="./css/base.css" />
+  <link rel="stylesheet" href="./css/components.css" />
+  <link rel="stylesheet" href="./css/pages.css" />
+</head>
+<body class="page page-home" data-page="home">
+  <header class="nf-header">
+    <div class="nf-header__inner">
+      <a href="index.html" class="nf-logo">NailFinder</a>
+      <nav class="nf-nav">
+        <a href="index.html" class="nf-nav__link nf-nav__link--active">Accueil</a>
+        <a href="pages/recherche.html" class="nf-nav__link">Rechercher</a>
+        <a href="pages/certification.html" class="nf-nav__link">Certification</a>
+        <a href="pages/devenir-pro.html" class="nf-nav__link">Devenir pro</a>
+      </nav>
+      <button id="theme-toggle" class="btn btn-ghost" type="button">Mode sombre</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero en premier -->
+    <section class="hero">
+      <div class="hero__content container">
+        <p class="pill">POC · Démo front uniquement</p>
+        <h1>Trouvez une prothésiste ongulaire certifiée, en toute confiance.</h1>
+        <p class="hero__subtitle">Une sélection de professionnelles vérifiées, des avis transparents et un design pensé pour Clarisse.</p>
+        <form class="hero-search" action="./pages/recherche.html" method="get">
+          <label class="field">
+            <span class="field__label">Ville ou code postal</span>
+            <input class="field__input" type="text" name="q" placeholder="Paris, Lyon, Marseille…" />
+          </label>
+          <button class="btn btn-primary" type="submit">Rechercher une prothésiste</button>
+        </form>
+        <p class="hero__note">Données fictives · Aucune prise de rendez-vous réelle</p>
+      </div>
+    </section>
+
+    <!-- Comment ça marche ensuite -->
+    <section class="section section-how container">
+      <h2>Comment ça marche&nbsp;?</h2>
+      <div class="grid grid-3">
+        <article class="card card-step">
+          <div class="card-step__icon">1</div>
+          <h3>Ciblez votre zone</h3>
+          <p>Indiquez votre ville ou votre code postal pour découvrir les prothésistes proches de chez vous.</p>
+        </article>
+        <article class="card card-step">
+          <div class="card-step__icon">2</div>
+          <h3>Comparez en un coup d’œil</h3>
+          <p>Badges de certification, notes moyennes, spécialités&nbsp;: tout est pensé pour décider sereinement.</p>
+        </article>
+        <article class="card card-step">
+          <div class="card-step__icon">3</div>
+          <h3>Choisissez votre pro</h3>
+          <p>Consultez son profil détaillé, ses réalisations et ses avis clients pour faire le bon choix.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Prothésistes mises en avant -->
+    <section class="section section-featured">
+      <div class="container">
+        <div class="section__header">
+          <h2>Prothésistes mises en avant</h2>
+          <p class="section__subtitle">Sélection fictive pour la démonstration.</p>
+        </div>
+        <div class="grid grid-3" id="featured-pros"></div>
+      </div>
+    </section>
+
+    <!-- Bloc pour les professionnelles -->
+    <section class="section section-pros container">
+      <div class="section__split">
+        <div>
+          <h2>Une plateforme pensée aussi pour les professionnelles</h2>
+          <p>Visibilité qualifiée, image premium et mise en avant de votre expertise. NailFinder valorise les prothésistes qui font la différence.</p>
+        </div>
+        <div class="section__cta">
+          <a href="pages/devenir-pro.html" class="btn btn-secondary">Devenir prothésiste certifiée</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="nf-footer">
+    <div class="container nf-footer__inner">
+      <p>© 2025 NailFinder · POC réalisé pour Clarisse</p>
+      <p class="nf-footer__note">Prototype statique · Aucune donnée n’est réellement enregistrée.</p>
+    </div>
+  </footer>
+
+  <script src="./js/data.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>
