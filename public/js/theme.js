@@ -7,7 +7,9 @@
     } catch (e) {}
     const toggle = document.querySelector("#theme-toggle");
     if (toggle) {
-      toggle.textContent = theme === "dark" ? "Mode clair" : "Mode sombre";
+      const isDark = theme === "dark";
+      toggle.textContent = isDark ? "☀ Clair" : "☾ Sombre";
+      toggle.setAttribute("aria-pressed", isDark ? "true" : "false");
     }
   }
 
@@ -44,4 +46,3 @@
     registerServiceWorker();
   });
 })();
-

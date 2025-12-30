@@ -12,28 +12,31 @@
   <header class="nf-header">
     <div class="nf-header__inner">
       <a href="../index.html" class="nf-logo">POCERT</a>
+      <span class="nf-header__tagline pill">POC · Démo front uniquement</span>
       <nav class="nf-nav">
         <a href="../index.html" class="nf-nav__link">Accueil</a>
-        <a href="recherche.html" class="nf-nav__link nf-nav__link--active">Rechercher</a>
+        <a href="recherche.html" class="nf-nav__link nf-nav__link--active" aria-current="page">Rechercher</a>
         <a href="certification.html" class="nf-nav__link">Certification</a>
         <a href="devenir-pro.html" class="nf-nav__link">Devenir pro</a>
       </nav>
-      <button id="theme-toggle" class="btn btn-ghost" type="button">Mode sombre</button>
+      <button id="theme-toggle" class="btn btn-ghost" type="button" aria-label="Basculer le mode clair/sombre">Mode sombre</button>
     </div>
   </header>
 
   <main class="container section">
     <header class="section__header section__header--with-sub">
       <h1>Rechercher une prothésiste ongulaire</h1>
-      <p class="section__subtitle">Filtres simples, résultats clairs, pour trouver la bonne personne en quelques secondes.</p>
+      <p class="section__subtitle">Filtres simples, résultats clairs, pour trouver la bonne personne en quelques secondes (données fictives).</p>
     </header>
 
     <section class="search-layout">
       <aside class="search-filters">
+        <h2 class="search-filters__title">Filtrer la recherche</h2>
         <form id="search-form" class="search-form" onsubmit="return false;">
           <div class="field">
             <label class="field__label" for="search-city">Ville ou code postal</label>
-            <input class="field__input" id="search-city" type="text" placeholder="Paris, Lyon…" />
+            <input class="field__input" id="search-city" type="text" placeholder="Paris, Lyon, Bordeaux…" aria-describedby="search-city-help" />
+            <small id="search-city-help" class="field__help">Essayez par exemple « Bordeaux » pour l’institut de démo.</small>
           </div>
 
           <div class="field">
@@ -47,7 +50,7 @@
 
           <div class="field field--checkbox">
             <input type="checkbox" id="search-certified" />
-            <label for="search-certified">Certifiées uniquement</label>
+            <label for="search-certified">Certifiées POCERT uniquement</label>
           </div>
 
           <button class="btn btn-primary btn-block" id="search-button" type="button">Mettre à jour les résultats</button>
@@ -60,14 +63,18 @@
           <p id="results-summary">Chargement des résultats…</p>
         </header>
         <div id="results-list" class="grid grid-2 search-results__grid"></div>
-        <p id="results-empty" class="results-empty" hidden>Aucune prothésiste ne correspond à ces critères dans ce POC. Essayez d’élargir la recherche.</p>
+        <p id="results-empty" class="results-empty" hidden>
+          Aucune prothésiste ne correspond à ces critères dans ce prototype.
+          Données très limitées : essayez une grande ville (Paris, Lyon, Marseille, Bordeaux) ou élargissez la recherche,
+          ou utilisez le bouton « Réinitialiser » pour revenir à l’état de départ.
+        </p>
       </section>
     </section>
   </main>
 
   <footer class="nf-footer">
     <div class="container nf-footer__inner">
-      <p>© 2025 NailFinder</p>
+      <p>© 2025 POCERT – Prototype d’interface (ex-NailFinder)</p>
     </div>
   </footer>
 

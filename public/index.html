@@ -8,19 +8,20 @@
   <link rel="stylesheet" href="./css/base.css" />
   <link rel="stylesheet" href="./css/components.css" />
   <link rel="stylesheet" href="./css/pages.css" />
-    <link rel="manifest" href="./manifest.json" />
+  <link rel="manifest" href="./manifest.json" />
 </head>
 <body class="page page-home" data-page="home">
   <header class="nf-header">
     <div class="nf-header__inner">
       <a href="index.html" class="nf-logo">POCERT</a>
+      <span class="nf-header__tagline pill">POC · Démo front uniquement</span>
       <nav class="nf-nav">
-        <a href="index.html" class="nf-nav__link nf-nav__link--active">Accueil</a>
+        <a href="index.html" class="nf-nav__link nf-nav__link--active" aria-current="page">Accueil</a>
         <a href="pages/recherche.html" class="nf-nav__link">Rechercher</a>
         <a href="pages/certification.html" class="nf-nav__link">Certification</a>
         <a href="pages/devenir-pro.html" class="nf-nav__link">Devenir pro</a>
       </nav>
-      <button id="theme-toggle" class="btn btn-ghost" type="button">Mode sombre</button>
+      <button id="theme-toggle" class="btn btn-ghost" type="button" aria-label="Basculer le mode clair/sombre">Mode sombre</button>
     </div>
   </header>
 
@@ -30,15 +31,16 @@
       <div class="hero__content container">
         <p class="pill">POC · Démo front uniquement</p>
         <h1>Trouvez une prothésiste ongulaire certifiée, en toute confiance.</h1>
-        <p class="hero__subtitle">Une sélection de professionnelles vérifiées, des avis transparents et un design pensé pour Clarisse.</p>
+        <p class="hero__subtitle">Une sélection de professionnelles vérifiées, des avis transparents et une expérience pensée pour Clarisse.</p>
         <form class="hero-search" action="./pages/recherche.html" method="get">
           <label class="field">
             <span class="field__label">Ville ou code postal</span>
-            <input class="field__input" type="text" name="q" placeholder="Paris, Lyon, Marseille…" />
+            <input class="field__input" type="text" name="q" placeholder="Paris, Lyon, Bordeaux…" aria-describedby="home-search-help" />
+            <small id="home-search-help" class="field__help">Données fictives · Essayez par exemple « Bordeaux » dans la recherche.</small>
           </label>
           <button class="btn btn-primary" type="submit">Rechercher une prothésiste</button>
         </form>
-        <p class="hero__note">Données fictives · Aucune prise de rendez-vous réelle</p>
+        <p class="hero__note">Données fictives · Aucune prise de rendez-vous réelle. Ce prototype illustre l'expérience envisagée pour POCERT.</p>
       </div>
     </section>
 
@@ -69,7 +71,7 @@
       <div class="container">
         <div class="section__header">
           <h2>Prothésistes mises en avant</h2>
-          <p class="section__subtitle">Sélection fictive pour la démonstration.</p>
+          <p class="section__subtitle">Exemple de profils qui pourraient être affichés (données fictives).</p>
         </div>
         <div class="grid grid-3" id="featured-pros"></div>
       </div>
@@ -80,7 +82,8 @@
       <div class="section__split">
         <div>
           <h2>Une plateforme pensée aussi pour les professionnelles</h2>
-          <p>Visibilité qualifiée, image premium et mise en avant de votre expertise. NailFinder valorise les prothésistes qui font la différence.</p>
+          <p>Visibilité qualifiée, image premium et mise en avant de votre expertise. POCERT valorise les prothésistes qui font la différence dans la durée.</p>
+          <p class="section__subtitle">Prototype statique : aucune donnée n’est transmise, tout est pensé pour illustrer l’expérience future.</p>
         </div>
         <div class="section__cta">
           <a href="pages/devenir-pro.html" class="btn btn-secondary">Devenir prothésiste certifiée</a>
@@ -91,7 +94,7 @@
 
   <footer class="nf-footer">
     <div class="container nf-footer__inner">
-      <p>© 2025 NailFinder · POC réalisé pour Clarisse</p>
+      <p>© 2025 POCERT – Prototype d’interface (ex-NailFinder)</p>
       <p class="nf-footer__note">Prototype statique · Aucune donnée n’est réellement enregistrée.</p>
     </div>
   </footer>

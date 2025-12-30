@@ -4,8 +4,17 @@
   function createProCard(pro) {
     const url = `pages/profil.html?id=${encodeURIComponent(pro.id)}`;
     const certifiedBadge = pro.certified
-      ? '<span class="badge badge-certified">Certifiée NailFinder</span>'
+      ? '<span class="badge badge-certified">Certifiée POCERT</span>'
       : '<span class="badge badge-soft">Profil en découverte</span>';
+    const demoBadge = pro.demoOnly
+      ? '<span class="badge badge-soft">Démo POCERT · Données fictives</span>'
+      : "";
+
+    const specialties = Array.isArray(pro.specialties) && pro.specialties.length
+      ? `<div class="card-pro__specialties tags">${pro.specialties
+          .map((s) => `<span class=\"tag-choice\">${s}</span>`)
+          .join("")}</div>`
+      : "";
 
     return `
       <article class="card card-pro">
@@ -18,9 +27,11 @@
               <span class="rating">${pro.rating.toFixed(1)}</span>
               <span>(${pro.reviewsCount} avis)</span>
               ${certifiedBadge}
+              ${demoBadge}
             </div>
           </div>
         </div>
+        ${specialties}
         <p style="margin-top:12px;font-size:0.9rem;">${pro.bio}</p>
         <a href="${url}" class="btn btn-secondary" style="margin-top:14px;">Voir le profil</a>
       </article>

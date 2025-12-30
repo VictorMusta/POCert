@@ -58,7 +58,7 @@
       reviewsCount: 5,
       avatar: "https://via.placeholder.com/200x200.png?text=POCERT",
       specialties: ["Prothèse ongulaire certifiée", "Manucure spa", "Nail art signature"],
-      bio: "Institut fictif de démonstration POCERT à Bordeaux : cabine lumineuse, protocole hygiène poussé et sélection de teintes nude premium.",
+      bio: "Institut fictif de démonstration POCERT à Bordeaux : cabine lumineuse, protocole hygiène poussé et sélection de teintes nude premium. Profil 100 % démo pour illustrer un cas certifié.",
       demoOnly: true,
     },
   ],
@@ -80,4 +80,3 @@
     },
   ],
 };
-
