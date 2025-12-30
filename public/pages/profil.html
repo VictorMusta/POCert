@@ -12,13 +12,14 @@
   <header class="nf-header">
     <div class="nf-header__inner">
       <a href="../index.html" class="nf-logo">POCERT</a>
+      <span class="nf-header__tagline pill">POC · Démo front uniquement</span>
       <nav class="nf-nav">
         <a href="../index.html" class="nf-nav__link">Accueil</a>
         <a href="recherche.html" class="nf-nav__link">Rechercher</a>
         <a href="certification.html" class="nf-nav__link">Certification</a>
         <a href="devenir-pro.html" class="nf-nav__link">Devenir pro</a>
       </nav>
-      <button id="theme-toggle" class="btn btn-ghost" type="button">Mode sombre</button>
+      <button id="theme-toggle" class="btn btn-ghost" type="button" aria-label="Basculer le mode clair/sombre">Mode sombre</button>
     </div>
   </header>
 
@@ -35,6 +36,7 @@
             <span id="profile-rating" class="rating"></span>
             <span id="profile-badges" class="profile__badges"></span>
           </div>
+          <p id="profile-summary" class="profile__summary"></p>
         </div>
       </div>
 
@@ -58,14 +60,14 @@
 
     <section id="profile-not-found" class="profile profile--empty" hidden>
       <h1>Profil introuvable</h1>
-      <p>La prothésiste que vous cherchez n’existe pas dans ce POC.</p>
+      <p>La prothésiste que vous cherchez n’existe pas dans ce prototype POCERT.</p>
       <a href="recherche.html" class="btn btn-secondary">Retour à la recherche</a>
     </section>
   </main>
 
   <footer class="nf-footer">
     <div class="container nf-footer__inner">
-      <p>© 2025 NailFinder</p>
+      <p>© 2025 POCERT – Prototype d’interface (ex-NailFinder)</p>
     </div>
   </footer>
 

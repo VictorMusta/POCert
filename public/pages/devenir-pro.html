@@ -12,13 +12,14 @@
   <header class="nf-header">
     <div class="nf-header__inner">
       <a href="../index.html" class="nf-logo">POCERT</a>
+      <span class="nf-header__tagline pill">POC · Démo front uniquement</span>
       <nav class="nf-nav">
         <a href="../index.html" class="nf-nav__link">Accueil</a>
         <a href="recherche.html" class="nf-nav__link">Rechercher</a>
         <a href="certification.html" class="nf-nav__link">Certification</a>
-        <a href="devenir-pro.html" class="nf-nav__link nf-nav__link--active">Devenir pro</a>
+        <a href="devenir-pro.html" class="nf-nav__link nf-nav__link--active" aria-current="page">Devenir pro</a>
       </nav>
-      <button id="theme-toggle" class="btn btn-ghost" type="button">Mode sombre</button>
+      <button id="theme-toggle" class="btn btn-ghost" type="button" aria-label="Basculer le mode clair/sombre">Mode sombre</button>
     </div>
   </header>
 
@@ -26,6 +27,7 @@
     <header class="section__header section__header--with-sub">
       <h1>Devenir prothésiste certifiée POCERT</h1>
       <p class="section__subtitle">Un positionnement premium, une clientèle en confiance, une image maîtrisée.</p>
+      <p class="section__subtitle"><span class="pill">Formulaire 100 % fictif – aucun envoi réel</span></p>
     </header>
 
     <section class="grid grid-2 section">
@@ -49,18 +51,18 @@
       <form id="pro-form" class="form" novalidate>
         <div class="grid grid-2 grid-gap">
           <div class="field">
-            <label class="field__label" for="pro-name">Nom / Nom du salon</label>
+            <label class="field__label" for="pro-name">Nom / Nom du salon *</label>
             <input class="field__input" id="pro-name" type="text" required />
           </div>
           <div class="field">
-            <label class="field__label" for="pro-city">Ville</label>
+            <label class="field__label" for="pro-city">Ville *</label>
             <input class="field__input" id="pro-city" type="text" required />
           </div>
         </div>
 
         <div class="grid grid-2 grid-gap">
           <div class="field">
-            <label class="field__label" for="pro-email">Email</label>
+            <label class="field__label" for="pro-email">Email *</label>
             <input class="field__input" id="pro-email" type="email" required />
           </div>
           <div class="field">
@@ -69,15 +71,27 @@
           </div>
         </div>
 
-        <div class="field">
-          <label class="field__label" for="pro-experience">Années d’expérience</label>
-          <select class="field__input" id="pro-experience">
-            <option value="">Sélectionner…</option>
-            <option value="0-1">Moins d’un an</option>
-            <option value="1-3">1–3 ans</option>
-            <option value="3-5">3–5 ans</option>
-            <option value="5+">Plus de 5 ans</option>
-          </select>
+        <div class="grid grid-2 grid-gap">
+          <div class="field">
+            <label class="field__label" for="pro-experience">Années d’expérience</label>
+            <select class="field__input" id="pro-experience">
+              <option value="">Sélectionner…</option>
+              <option value="0-1">Moins d’un an</option>
+              <option value="1-3">1–3 ans</option>
+              <option value="3-5">3–5 ans</option>
+              <option value="5+">Plus de 5 ans</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="field__label" for="pro-clients">Nombre de clientes / mois (estimation)</label>
+            <select class="field__input" id="pro-clients">
+              <option value="">Sélectionner…</option>
+              <option value="-10">Moins de 10</option>
+              <option value="10-30">10–30</option>
+              <option value="30-60">30–60</option>
+              <option value="60+">Plus de 60</option>
+            </select>
+          </div>
         </div>
 
         <fieldset class="field-group">
@@ -86,15 +100,18 @@
             <label class="tag-choice"><input type="checkbox" value="CAP esthétique" /> CAP esthétique</label>
             <label class="tag-choice"><input type="checkbox" value="Formation gel" /> Formation gel</label>
             <label class="tag-choice"><input type="checkbox" value="Nail art avancé" /> Nail art avancé</label>
+            <label class="tag-choice"><input type="checkbox" value="Prothésie ongulaire complète" /> Prothésie ongulaire complète</label>
+            <label class="tag-choice"><input type="checkbox" value="Hygiène salon" /> Hygiène salon</label>
           </div>
         </fieldset>
 
         <div class="field field--checkbox">
           <input type="checkbox" id="pro-consent" required />
-          <label for="pro-consent">Je comprends qu’il s’agit d’un prototype et qu’aucune donnée ne sera réellement traitée.</label>
+          <label for="pro-consent">Je comprends qu’il s’agit d’un prototype et qu’aucune donnée ne sera réellement traitée. *</label>
         </div>
 
         <button class="btn btn-primary" type="submit">Envoyer ma demande fictive</button>
+        <p class="field__help">Vos réponses ne sont pas enregistrées. Le message de succès illustre simplement ce que l’expérience pourrait être.</p>
         <p id="pro-form-message" class="form-message" aria-live="polite"></p>
       </form>
     </section>
@@ -102,7 +119,7 @@
 
   <footer class="nf-footer">
     <div class="container nf-footer__inner">
-      <p>© 2025 NailFinder</p>
+      <p>© 2025 POCERT – Prototype d’interface (ex-NailFinder)</p>
     </div>
   </footer>
 

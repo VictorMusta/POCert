@@ -25,17 +25,17 @@
   --nf-bg: #0f1720;
   --nf-bg-card: #111827;
   --nf-color-primary: #7dd3b0;
-  --nf-color-primary-soft: rgba(125, 211, 176, 0.12);
+  --nf-color-primary-soft: rgba(125, 211, 176, 0.16);
   --nf-color-accent: #f4d9cf;
   --nf-color-text: #f9fafb;
-  --nf-color-muted: #9ca3af;
+  --nf-color-muted: #d1d5db;
   --nf-border-soft: #1f2933;
   --nf-shadow-soft: 0 22px 55px rgba(0, 0, 0, 0.7);
   --nf-shadow-subtle: 0 14px 30px rgba(0, 0, 0, 0.5);
 }
 
-*, *::before, *::after {
-  box-sizing: border-box;
+html {
+  scroll-behavior: smooth;
 }
 
 html, body {
@@ -86,13 +86,25 @@ main {
 }
 
 .section {
-  padding: var(--nf-spacing-xl) 0;
+  padding: calc(var(--nf-spacing-xl) * 1.1) 0;
 }
 
 h1, h2, h3, h4 {
   font-weight: 600;
   letter-spacing: 0.02em;
   margin: 0 0 var(--nf-spacing-m);
+}
+
+h1 {
+  font-size: clamp(2.2rem, 2.6vw, 2.6rem);
+}
+
+h2 {
+  font-size: clamp(1.6rem, 2vw, 1.8rem);
+}
+
+h3 {
+  font-size: 1.25rem;
 }
 
 p {
@@ -236,6 +248,6 @@ ul, ol {
 
 @media (max-width: 600px) {
   .section {
-    padding: 28px 0;
+    padding: 24px 0;
   }
 }

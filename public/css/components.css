@@ -8,8 +8,18 @@
   border: 1px solid transparent;
   font-size: 0.95rem;
   cursor: pointer;
-  transition: transform 0.08s ease-out, box-shadow 0.08s ease-out, background-color 0.15s ease, border-color 0.15s ease;
+  transition: transform 0.08s ease-out, box-shadow 0.08s ease-out, background-color 0.15s ease, border-color 0.15s ease, opacity 0.15s ease;
   white-space: nowrap;
+}
+
+.btn:focus-visible {
+  outline: 2px solid rgba(79, 116, 99, 0.6);
+  outline-offset: 2px;
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: none;
 }
 
 .btn-primary {
@@ -89,6 +99,12 @@
   border-radius: var(--nf-radius-m);
   padding: var(--nf-spacing-l);
   box-shadow: var(--nf-shadow-subtle);
+  transition: transform 0.12s ease-out, box-shadow 0.12s ease-out;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
 }
 
 .card-step {
@@ -199,12 +215,26 @@
   padding: 0.6rem 0.75rem;
   font-size: 0.95rem;
   background: rgba(255, 255, 255, 0.9);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
 }
 
-.field__input:focus {
+.field__input:focus-visible {
   outline: 2px solid rgba(79, 116, 99, 0.4);
   outline-offset: 1px;
   border-color: rgba(79, 116, 99, 0.6);
+}
+
+.field__help {
+  font-size: 0.8rem;
+  color: var(--nf-color-muted);
+}
+
+.field--error .field__input {
+  border-color: #c26a6a;
+}
+
+.field--error .field__label {
+  color: #c26a6a;
 }
 
 .field--checkbox {
@@ -263,50 +293,37 @@
   color: var(--nf-color-primary);
 }
 
-.list-soft {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+.nf-header__tagline {
+  font-size: 0.7rem;
+  opacity: 0.85;
 }
 
-.list-soft li::before {
-  content: "•";
-  color: var(--nf-color-primary);
-  display: inline-block;
-  width: 1em;
-  margin-left: -1em;
+.btn--subtle-active {
+  opacity: 0.85;
 }
 
-.rating {
-  font-size: 0.9rem;
+.card-cert-level {
+  position: relative;
 }
 
-.rating::before {
-  content: "★";
-  color: #e2a14f;
-  margin-right: 4px;
+.card-cert-level::before {
+  content: "POC";
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--nf-color-muted);
 }
 
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: var(--nf-spacing-m);
+.card-pro__specialties {
+  margin-top: 10px;
 }
 
-.form-message {
-  margin-top: var(--nf-spacing-s);
-  font-size: 0.9rem;
-}
-
-.form-message--success {
-  color: #2f705c;
-}
-
-.form-message--error {
-  color: #c26a6a;
+.card-pro__specialties .tag-choice,
+.card-pro__specialties .tag {
+  font-size: 0.75rem;
 }
 
 .timeline {

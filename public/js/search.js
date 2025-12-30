@@ -2,31 +2,46 @@
   const data = window.NAILFINDER_DATA;
   if (!data || !data.pros) return;
 
-  function renderResults(list) {
+  function renderResults(list, options = {}) {
     const container = document.getElementById("results-list");
     const summary = document.getElementById("results-summary");
     const empty = document.getElementById("results-empty");
     if (!container || !summary || !empty) return;
 
+    const { query = "", minRating = 0, onlyCertified = false } = options;
+
     if (!list.length) {
       container.innerHTML = "";
-      summary.textContent = "0 prothésiste trouvée";
+      summary.textContent = "0 prothésiste trouvée dans ce POC de démonstration";
       empty.hidden = false;
       return;
     }
 
     const plural = list.length > 1 ? "prothésistes" : "prothésiste";
-    summary.textContent = `${list.length} ${plural} trouvée(s) dans ce POC`;
+    const base = `${list.length} ${plural} trouvée(s) dans ce POC de démonstration`;
+    const parts = [];
+    if (query) {
+      parts.push(`autour de "${query}"`);
+    } else {
+      parts.push("sur l'ensemble des profils de démo");
+    }
+    if (minRating > 0) {
+      parts.push(`note minimale ${minRating}★`);
+    }
+    if (onlyCertified) {
+      parts.push("certifiées POCERT uniquement");
+    }
+    summary.textContent = `${base} (${parts.join(" · ")})`;
     empty.hidden = true;
 
     container.innerHTML = list
       .map((pro) => {
         const url = `profil.html?id=${encodeURIComponent(pro.id)}`;
         const certifiedBadge = pro.certified
-          ? '<span class="badge badge-certified">Certifiée</span>'
+          ? '<span class="badge badge-certified">Certifiée POCERT</span>'
           : "";
         const demoBadge = pro.demoOnly
-          ? '<span class="badge badge-soft">Démo POCERT</span>'
+          ? '<span class="badge badge-soft">Démo POCERT · Données fictives</span>'
           : "";
 
         return `
@@ -44,7 +59,8 @@
                 </div>
               </div>
             </div>
-            <a href="${url}" class="btn btn-secondary" style="margin-top:14px;">Voir le profil</a>
+            <p style="margin-top:10px;font-size:0.8rem;">Données fictives pour la démonstration · aucune prise de rendez-vous possible.</p>
+            <a href="${url}" class="btn btn-secondary" style="margin-top:10px;">Voir le profil</a>
           </article>
         `;
       })
@@ -75,19 +91,25 @@
       return matchesCity && matchesRating && matchesCertified;
     });
 
-    renderResults(filtered);
+    renderResults(filtered, { query: cityInput.value.trim(), minRating, onlyCertified });
   }
 
   function resetFilters() {
     const cityInput = document.getElementById("search-city");
     const ratingSelect = document.getElementById("search-rating");
     const certifiedCheckbox = document.getElementById("search-certified");
+    const resetButton = document.getElementById("search-reset");
     if (!cityInput || !ratingSelect || !certifiedCheckbox) return;
 
     cityInput.value = "";
     ratingSelect.value = "0";
     certifiedCheckbox.checked = false;
-    renderResults(data.pros);
+    renderResults(data.pros, {});
+
+    if (resetButton) {
+      resetButton.classList.add("btn--subtle-active");
+      setTimeout(() => resetButton.classList.remove("btn--subtle-active"), 600);
+    }
   }
 
   function init() {
@@ -113,10 +135,9 @@
       applyFilters();
     } else {
       // Afficher tous les résultats au chargement pour la démo
-      renderResults(data.pros);
+      renderResults(data.pros, {});
     }
   }
 
   document.addEventListener("DOMContentLoaded", init);
 })();
-
